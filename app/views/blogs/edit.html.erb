@@ -1,0 +1,19 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= @blog.errors.count%> Il y a des erreurs.</h4>
+      <div class="alert alert-danger">
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </div>
+    </div>
+  <% end %> 
+  <div class="blog_content">
+    <%= form.label :content%>
+    <%= form.text_area :content%>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Retour à la liste des Tweets", blogs_path %>

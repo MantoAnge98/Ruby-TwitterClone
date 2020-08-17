@@ -1,0 +1,12 @@
+<%= form_with(model: @blog, local: true ,url: confirm_blogs_path) do |form| %>
+<% if @blog.errors.any? %>
+      <div class="alert alert-danger" role="alert">Please this field must not be empty / Do not also exceed 140 craters. </div>
+  <% end %>
+  <div class="blog_title" class="input-group">
+    <%= form.label :content %>
+    <%= form.text_area :content%> 
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to "Retour à la liste des Tweets", blogs_path %>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="font-family: 'Poppins', sans-serif;">
+    <!-- Acces to nav bar-->
+    <%= render '/layouts/nav'%>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+        </div>
+
+        <div class="col-xs-8">
+          <div class="panel panel-primary">
+            <div class="panel-body">
+               <%= yield %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+        </div>
+ 
+        <div class="footer" style="width:100%;position:fixed;text-align:center;left:0;bottom:0;color:white;background-color:#a39f95">
+          <p>© 2020 Twitter Clone</p>
+        </div>
+      </div>
+  </body>
+</html>
